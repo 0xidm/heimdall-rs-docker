@@ -1,0 +1,5 @@
+#!/bin/bash
+
+OUTPUT_DIR=/tmp/heimdall
+echo "Writing output to $OUTPUT_DIR"
+docker run -it --name heimdall --rm -v "$OUTPUT_DIR":/home/heimdall/output heimdall-rs:0.4.7 .bifrost/bin/heimdall $1 -r https://eth.llamarpc.com $2 $3 $4 $5 $6 $7 $8 $9
